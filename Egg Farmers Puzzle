@@ -1,0 +1,17 @@
+
+Carton = (12)
+Box = (6)
+
+daily_eggs = input("how Many eggs today? ")
+daily_eggs_int = (int(daily_eggs))
+
+number_of_cartons = (daily_eggs_int//Carton)
+
+leftover_from_cartons = (daily_eggs_int%Carton)
+
+number_of_boxes = (leftover_from_cartons//Box)
+
+leftover_from_boxes = (daily_eggs_int%Box)
+
+print("you will get ",(number_of_cartons),"cartons of eggs with ", (number_of_boxes), "box, and have",(leftover_from_boxes), "left to cook for breakfast")
+ 
