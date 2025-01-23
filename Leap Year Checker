@@ -1,0 +1,23 @@
+# a script that will determine if a user entered year
+# is a leap year
+
+# a year is a leap year if it is divisible by 4
+# it is not a leap year if it is divisible by 100, unless it is also divisible by 400
+
+year_input = input("Enter a year: ")
+
+int_year_input = int(year_input)
+
+if int_year_input % 4 == 0:
+    if int_year_input % 100 == 0:
+        if int_year_input % 400 == 0:
+            print(f"The year {year_input} is a leap year!")
+        else: 
+            print(f"The year {year_input} is not a leap year.")
+    else: print(f"The year {year_input} is not a leap year.")
+else: print(f"The year {year_input} is not a leap year.")
+
+
+ 
+
+

@@ -1,0 +1,60 @@
+#Write a Python script that:
+
+#Asks the user to enter a month (as a number between 1 and 12) and a year.
+#Prints the number of days in that month, considering:
+#February: 28 days, or 29 days in a leap year.
+#April, June, September, November: 30 days.
+#January, March, May, July, August, October, December: 31 days.
+#Validates the user input:
+#The month must be a number between 1 and 12.
+#The year must be a valid integer.
+
+month = input("Enter a month (1-12): ")
+year = input("Enter a year: ")
+
+#placeholder for days
+days = 0
+
+# Converting the user inputs to integers
+month_int = int(month)
+year_int = int(year)
+
+# validate user has put in numbers for months
+if not month.isdigit() or not year.isdigit():
+    print("Invalid entry! Please enter numbers only for the month and year.")
+    exit()
+
+# checking for initial errors in user input
+if month_int < 1 or month_int > 12:
+    print("Invalid entry, please pick a month from 1-12")
+    exit()
+
+if not year.isdigit():
+    print("Invalid entry, please enter a year in numbers only, e.g: 1987")
+    exit
+
+
+#determining the correct amount of days
+if month_int == 4 or month_int == 6 or month_int == 9 or month_int == 11:  # April, June, September, November
+    days = 30
+
+if month_int == 1 or month_int == 3 or month_int == 5 or month_int == 7 or month_int == 8 or month_int == 10 or month_int == 12:
+    days = 31
+            
+#leap year checker for February
+if month_int == 2:
+    if year_int % 4 == 0:
+        if year_int % 100 == 0:
+            if year_int % 400 == 0:
+                days = 29
+            else: 
+                days = 28
+        else: 
+            days = 29
+    else:
+        days = 28
+
+
+#final output
+
+print(f"The month {month} of the year {year} has {days} days")
